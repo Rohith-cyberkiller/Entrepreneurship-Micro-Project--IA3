@@ -1,0 +1,413 @@
+{
+  "scenarios": [
+    {
+      "id": "scenario_1",
+      "title": "1. Official Signed VLC Media Player Installer",
+      "filename": "vlc-3.0.20-win64.exe",
+      "sha256": "4b6a15e6191bcf80ca02eb34ec264ec4f31c26f04d7c588e401eb12be036578a",
+      "member1": {
+        "file_info": {
+          "filename": "vlc-3.0.20-win64.exe",
+          "size_bytes": 42180512,
+          "magic_bytes": "4D 5A 90 00",
+          "detected_format": "Windows PE Executable",
+          "extension_masquerading": false,
+          "overall_shannon_entropy": 5.8124,
+          "is_likely_packed": false
+        },
+        "hashes": {
+          "md5": "c0182ecbf81e55e810567e7c997dd6f1",
+          "sha1": "3775b6d1945145b2067756f7ef5eb6b840134b3e",
+          "sha256": "4b6a15e6191bcf80ca02eb34ec264ec4f31c26f04d7c588e401eb12be036578a",
+          "imphash": "a576c9ef16ebfa873099908cfad50be4"
+        },
+        "certificate_status": {
+          "is_signed": true,
+          "verification_status": "SIGNED_VERIFIED",
+          "signer_common_name": "VideoLAN non-profit organization",
+          "issuer_ca": "Certum Trusted Network CA",
+          "serial_number": "1840294810294810294",
+          "valid_from": "2023-01-10T00:00:00Z",
+          "valid_to": "2026-01-10T23:59:59Z",
+          "claimed_product_name": "VLC media player",
+          "claimed_company_name": "VideoLAN",
+          "clone_mismatch_detected": false
+        },
+        "pe_metadata": {
+          "compile_timestamp": "2024-01-15T08:30:00+00:00",
+          "timestamp_anomaly": false,
+          "sections": [
+            {"name": ".text", "virtual_size": 25000000, "raw_size": 25000000, "entropy": 5.75, "wx_risk": false},
+            {"name": ".rdata", "virtual_size": 8000000, "raw_size": 8000000, "entropy": 4.52, "wx_risk": false},
+            {"name": ".data", "virtual_size": 2000000, "raw_size": 1500000, "entropy": 2.10, "wx_risk": false},
+            {"name": ".rsrc", "virtual_size": 7180512, "raw_size": 7180512, "entropy": 6.12, "wx_risk": false}
+          ],
+          "suspicious_imports": []
+        },
+        "risk_assessment": {
+          "risk_score": 0.0,
+          "verdict": "SAFE",
+          "reasons": ["Clean binary with valid Authenticode signature from VideoLAN non-profit organization"]
+        }
+      },
+      "member2": {
+        "ml_prediction": {
+          "malware_probability_score": 4.2,
+          "classification_verdict": "BENIGN",
+          "confidence_level": "Very High",
+          "model_type": "XGBoost Classifier (v1.2)",
+          "top_contributing_features": [
+            {"feature": "is_signed", "impact": "-35.0%", "description": "Valid Authenticode digital signature verified"},
+            {"feature": "overall_shannon_entropy", "impact": "-25.0%", "description": "Standard binary entropy within natural uncompressed code range"}
+          ]
+        }
+      },
+      "member3": {
+        "threat_intelligence": {
+          "virustotal": {
+            "found": true,
+            "malicious_count": 0,
+            "suspicious_count": 0,
+            "harmless_count": 68,
+            "undetected": 4,
+            "total_engines": 72,
+            "detection_ratio_pct": 0.0,
+            "threat_label": "Clean",
+            "reputation": 142,
+            "times_submitted": 2840,
+            "source": "offline_cache"
+          },
+          "malwarebazaar": {
+            "found": false,
+            "signature_family": null,
+            "file_type": "exe",
+            "tags": [],
+            "yara_rules": [],
+            "source": "offline_cache"
+          }
+        },
+        "component_risk_breakdown": {
+          "member1_static_risk_score": 0.0,
+          "member2_ml_probability_score": 4.2,
+          "member3_threat_intel_risk_score": 0.0,
+          "weighting_strategy_used": "Cloud-Verified Weighted Consensus (50% TI / 30% ML / 20% Static)",
+          "active_weights": {"member1_static": 0.2, "member2_ml": 0.3, "member3_ti": 0.5}
+        },
+        "final_decision": {
+          "final_risk_score": 1.26,
+          "final_trust_score": 98.74,
+          "verdict": "TRUSTED / SAFE TO INSTALL",
+          "recommended_action": "ALLOW",
+          "critical_overrides_triggered": []
+        }
+      }
+    },
+    {
+      "id": "scenario_2",
+      "title": "2. Counterfeit Google Chrome Trojan Clone (RedLineStealer)",
+      "filename": "GoogleChrome_Setup.exe",
+      "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+      "member1": {
+        "file_info": {
+          "filename": "GoogleChrome_Setup.exe",
+          "size_bytes": 1843200,
+          "magic_bytes": "4D 5A 90 00",
+          "detected_format": "Windows PE Executable",
+          "extension_masquerading": false,
+          "overall_shannon_entropy": 7.6412,
+          "is_likely_packed": true
+        },
+        "hashes": {
+          "md5": "84c82835a5d21bbcf75a61706d8ab549",
+          "sha1": "3395856ce81f2b7382dee72602f798b642f14140",
+          "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+          "imphash": "f34d5f2d4577ed6d9ceec516c1f5a744"
+        },
+        "certificate_status": {
+          "is_signed": false,
+          "verification_status": "UNSIGNED",
+          "signer_common_name": null,
+          "issuer_ca": null,
+          "claimed_product_name": "Google Chrome",
+          "claimed_company_name": "Google LLC",
+          "clone_mismatch_detected": true
+        },
+        "pe_metadata": {
+          "compile_timestamp": "2024-03-24T10:27:12+00:00",
+          "timestamp_anomaly": false,
+          "sections": [
+            {"name": "UPX0", "virtual_size": 409600, "raw_size": 0, "entropy": 0.0, "wx_risk": true},
+            {"name": "UPX1", "virtual_size": 1433600, "raw_size": 1420800, "entropy": 7.8914, "wx_risk": true}
+          ],
+          "suspicious_imports": ["VirtualAllocEx", "WriteProcessMemory", "CreateRemoteThread"]
+        },
+        "risk_assessment": {
+          "risk_score": 90.0,
+          "verdict": "COUNTERFEIT / HIGH RISK",
+          "reasons": [
+            "File claims to be Google Chrome but lacks a valid Google LLC digital signature (CRITICAL: Counterfeit Clone Alert)",
+            "Section UPX1 has both Writable and Executable (W+X) permissions",
+            "High Shannon entropy (7.8914) in section UPX1 indicates packed/hidden code"
+          ]
+        }
+      },
+      "member2": {
+        "ml_prediction": {
+          "malware_probability_score": 94.8,
+          "classification_verdict": "HIGH RISK MALWARE / COUNTERFEIT",
+          "confidence_level": "Very High",
+          "model_type": "XGBoost Classifier (v1.2)",
+          "top_contributing_features": [
+            {"feature": "clone_mismatch_detected", "impact": "+35.2%", "description": "Claims commercial application identity but lacks valid vendor signature"},
+            {"feature": "max_section_entropy", "impact": "+28.5%", "description": "High section entropy (7.89 > 7.2 threshold) indicates packed/hidden code"},
+            {"feature": "has_process_injection", "impact": "+24.0%", "description": "Imports dangerous Process Injection API Triad"}
+          ]
+        }
+      },
+      "member3": {
+        "threat_intelligence": {
+          "virustotal": {
+            "found": true,
+            "malicious_count": 48,
+            "suspicious_count": 3,
+            "harmless_count": 0,
+            "undetected": 21,
+            "total_engines": 72,
+            "detection_ratio_pct": 66.67,
+            "threat_label": "trojan.stealer/redline",
+            "reputation": -84,
+            "times_submitted": 14,
+            "source": "offline_cache"
+          },
+          "malwarebazaar": {
+            "found": true,
+            "signature_family": "RedLineStealer",
+            "file_type": "exe",
+            "tags": ["exe", "upx", "stealer", "trojan"],
+            "yara_rules": ["win_redline_stealer_auto", "packed_upx_executable"],
+            "source": "offline_cache"
+          }
+        },
+        "component_risk_breakdown": {
+          "member1_static_risk_score": 90.0,
+          "member2_ml_probability_score": 94.8,
+          "member3_threat_intel_risk_score": 100.0,
+          "weighting_strategy_used": "Cloud-Verified Weighted Consensus (50% TI / 30% ML / 20% Static)",
+          "active_weights": {"member1_static": 0.2, "member2_ml": 0.3, "member3_ti": 0.5}
+        },
+        "final_decision": {
+          "final_risk_score": 96.44,
+          "final_trust_score": 3.56,
+          "verdict": "MALICIOUS OR COUNTERFEIT / DO NOT INSTALL",
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "critical_overrides_triggered": [
+            "Confirmed malware in MalwareBazaar (RedLineStealer)",
+            "Flagged by 48/72 vendors on VirusTotal",
+            "Counterfeit Publisher Identity Mismatch detected by Member 1 (Claims Google Chrome but unsigned)"
+          ]
+        }
+      }
+    },
+    {
+      "id": "scenario_3",
+      "title": "3. Brand-New Zero-Day UPX Packed Malware",
+      "filename": "SpecialUpdatePackage_x64.exe",
+      "sha256": "9a38f72c4e1b8590d3421183cf99281a7d65ee1a2c3b4d5e6f7a8b9c0d1e2f3a",
+      "member1": {
+        "file_info": {
+          "filename": "SpecialUpdatePackage_x64.exe",
+          "size_bytes": 128400,
+          "magic_bytes": "4D 5A 00 00",
+          "detected_format": "Windows PE Executable",
+          "extension_masquerading": false,
+          "overall_shannon_entropy": 7.8540,
+          "is_likely_packed": true
+        },
+        "hashes": {
+          "md5": "e58d34e2c88f12a3b01934c56e789a01",
+          "sha1": "7a89b01c23d45e6f7a8b9c0d1e2f3a4b5c6d7e8f",
+          "sha256": "9a38f72c4e1b8590d3421183cf99281a7d65ee1a2c3b4d5e6f7a8b9c0d1e2f3a",
+          "imphash": "N/A (Packed UPX)"
+        },
+        "certificate_status": {
+          "is_signed": false,
+          "verification_status": "UNSIGNED",
+          "signer_common_name": null,
+          "issuer_ca": null,
+          "claimed_product_name": null,
+          "claimed_company_name": null,
+          "clone_mismatch_detected": false
+        },
+        "pe_metadata": {
+          "compile_timestamp": "2024-03-24T10:27:12+00:00",
+          "timestamp_anomaly": false,
+          "sections": [
+            {"name": "UPX0", "virtual_size": 409600, "raw_size": 0, "entropy": 0.0, "wx_risk": true},
+            {"name": "UPX1", "virtual_size": 128000, "raw_size": 128000, "entropy": 7.85, "wx_risk": true}
+          ],
+          "suspicious_imports": ["VirtualAlloc", "CreateThread"]
+        },
+        "risk_assessment": {
+          "risk_score": 85.0,
+          "verdict": "COUNTERFEIT / HIGH RISK",
+          "reasons": [
+            "Overall file Shannon entropy (7.8540) is exceptionally high (> 7.2000), indicating packed or encrypted content",
+            "Section 'UPX1' has both Writable and Executable (W+X) permissions"
+          ]
+        }
+      },
+      "member2": {
+        "ml_prediction": {
+          "malware_probability_score": 91.0,
+          "classification_verdict": "HIGH RISK MALWARE / COUNTERFEIT",
+          "confidence_level": "Very High",
+          "model_type": "XGBoost Classifier (v1.2)",
+          "top_contributing_features": [
+            {"feature": "max_section_entropy", "impact": "+28.5%", "description": "High section entropy (7.85 > 7.2 threshold)"},
+            {"feature": "wx_permission_risk", "impact": "+18.0%", "description": "Executable section with write permissions"}
+          ]
+        }
+      },
+      "member3": {
+        "threat_intelligence": {
+          "virustotal": {
+            "found": false,
+            "status_code": 404,
+            "message": "Resource not found (Zero-Day or Unsubmitted Binary)",
+            "malicious_count": 0,
+            "suspicious_count": 0,
+            "harmless_count": 0,
+            "total_engines": 0,
+            "detection_ratio_pct": 0.0,
+            "threat_label": null,
+            "reputation": 0,
+            "times_submitted": 0,
+            "source": "offline_cache"
+          },
+          "malwarebazaar": {
+            "found": false,
+            "query_status": "hash_not_found",
+            "signature_family": null,
+            "file_type": null,
+            "tags": [],
+            "yara_rules": [],
+            "source": "offline_cache"
+          }
+        },
+        "component_risk_breakdown": {
+          "member1_static_risk_score": 85.0,
+          "member2_ml_probability_score": 91.0,
+          "member3_threat_intel_risk_score": "N/A (Zero-Day Unknown)",
+          "weighting_strategy_used": "Dynamic Zero-Day Weight Shift (55% ML / 45% Static / 0% Cloud TI)",
+          "active_weights": {"member1_static": 0.45, "member2_ml": 0.55, "member3_ti": 0.0}
+        },
+        "final_decision": {
+          "final_risk_score": 88.3,
+          "final_trust_score": 11.7,
+          "verdict": "MALICIOUS OR COUNTERFEIT / DO NOT INSTALL",
+          "recommended_action": "BLOCK_AND_QUARANTINE",
+          "critical_overrides_triggered": []
+        }
+      }
+    },
+    {
+      "id": "scenario_4",
+      "title": "4. Unknown Adware / Grayware Utility",
+      "filename": "FreeUtilityInstaller.exe",
+      "sha256": "81c3b87910a30b5993de2a450e18141870a311497a9f93c0bc135f606e10034a",
+      "member1": {
+        "file_info": {
+          "filename": "FreeUtilityInstaller.exe",
+          "size_bytes": 1048576,
+          "magic_bytes": "4D 5A 90 00",
+          "detected_format": "Windows PE Executable",
+          "extension_masquerading": false,
+          "overall_shannon_entropy": 6.7210,
+          "is_likely_packed": false
+        },
+        "hashes": {
+          "md5": "7b01b2a1a89f9e5c4672691fa30d507b",
+          "sha1": "51144a110c0bf9a475b4f2a7ec976b9da9dd3cf9",
+          "sha256": "81c3b87910a30b5993de2a450e18141870a311497a9f93c0bc135f606e10034a",
+          "imphash": "31278912389172389123789123789123"
+        },
+        "certificate_status": {
+          "is_signed": true,
+          "verification_status": "UNTRUSTED_ROOT",
+          "signer_common_name": "FreeTools Media Ltd",
+          "issuer_ca": "Unknown CA",
+          "claimed_product_name": "Media Booster",
+          "claimed_company_name": "FreeTools Media Ltd",
+          "clone_mismatch_detected": false
+        },
+        "pe_metadata": {
+          "compile_timestamp": "2023-08-11T14:10:00+00:00",
+          "timestamp_anomaly": false,
+          "sections": [
+            {"name": ".text", "virtual_size": 800000, "raw_size": 800000, "entropy": 6.50, "wx_risk": false},
+            {"name": ".rsrc", "virtual_size": 248576, "raw_size": 248576, "entropy": 5.20, "wx_risk": false}
+          ],
+          "suspicious_imports": ["URLDownloadToFileW", "WinExec"]
+        },
+        "risk_assessment": {
+          "risk_score": 45.0,
+          "verdict": "SUSPICIOUS",
+          "reasons": [
+            "Certificate issued by untrusted authority",
+            "Imports downloader APIs (URLDownloadToFileW)"
+          ]
+        }
+      },
+      "member2": {
+        "ml_prediction": {
+          "malware_probability_score": 52.0,
+          "classification_verdict": "SUSPICIOUS",
+          "confidence_level": "Moderate",
+          "model_type": "XGBoost Classifier (v1.2)",
+          "top_contributing_features": [
+            {"feature": "suspicious_imports_count", "impact": "+12.0%", "description": "Contains 2 suspicious Windows APIs flagged in threat dictionary"}
+          ]
+        }
+      },
+      "member3": {
+        "threat_intelligence": {
+          "virustotal": {
+            "found": true,
+            "malicious_count": 3,
+            "suspicious_count": 2,
+            "harmless_count": 12,
+            "undetected": 55,
+            "total_engines": 72,
+            "detection_ratio_pct": 4.17,
+            "threat_label": "adware.bundler/installcore",
+            "reputation": -12,
+            "times_submitted": 6,
+            "source": "offline_cache"
+          },
+          "malwarebazaar": {
+            "found": false,
+            "signature_family": null,
+            "file_type": "exe",
+            "tags": ["adware", "bundler"],
+            "yara_rules": [],
+            "source": "offline_cache"
+          }
+        },
+        "component_risk_breakdown": {
+          "member1_static_risk_score": 45.0,
+          "member2_ml_probability_score": 52.0,
+          "member3_threat_intel_risk_score": 65.0,
+          "weighting_strategy_used": "Cloud-Verified Weighted Consensus (50% TI / 30% ML / 20% Static)",
+          "active_weights": {"member1_static": 0.2, "member2_ml": 0.3, "member3_ti": 0.5}
+        },
+        "final_decision": {
+          "final_risk_score": 57.1,
+          "final_trust_score": 42.9,
+          "verdict": "SUSPICIOUS / PROCEED WITH CAUTION",
+          "recommended_action": "WARN_USER",
+          "critical_overrides_triggered": []
+        }
+      }
+    }
+  ]
+}

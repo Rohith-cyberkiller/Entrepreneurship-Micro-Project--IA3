@@ -1,0 +1,34 @@
+# ==============================================================================
+# CertiScan Studio // MalDetect-AI Unified Requirements
+# Group IA3: Fake Software & Malware Detection Suite
+# Integrates Member 1, Member 2, Member 3, and Member 4
+# ==============================================================================
+
+# Web Dashboard & Interactive Frontend
+streamlit>=1.30.0
+plotly>=5.18.0
+pandas>=2.1.0
+numpy>=1.26.0
+
+# Member 1: Cryptographic & Static Binary Lead (Daniel)
+pefile>=2023.2.7
+signify>=0.5.2
+
+# Member 2: ML Anomaly & Repacking Lead (Jerom)
+scikit-learn>=1.4.0
+xgboost>=2.0.0
+joblib>=1.3.0
+
+# AI Model 2: EMBER2024 Deep Binary / ELF Modality
+lightgbm>=4.0.0
+seaborn>=0.13.0
+matplotlib>=3.8.0
+
+# Member 3: Threat Intelligence & Decision Consensus Lead (Krishanth)
+requests>=2.31.0
+
+# Member 4: UI Integration & PDF Forensic Reporting Lead (Rohith)
+fpdf2>=2.7.0
+
+# Testing & Verification Framework
+pytest>=8.0.0

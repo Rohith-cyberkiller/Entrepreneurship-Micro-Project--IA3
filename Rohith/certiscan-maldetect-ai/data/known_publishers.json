@@ -1,0 +1,60 @@
+{
+  "publishers": [
+    {
+      "id": "google",
+      "company_name": "Google LLC",
+      "products": ["Google Chrome", "Chrome", "Google Drive", "Google Earth"],
+      "legitimate_signer_cns": ["Google LLC", "Google Inc", "Google Inc."],
+      "official_website": "https://www.google.com"
+    },
+    {
+      "id": "videolan",
+      "company_name": "VideoLAN",
+      "products": ["VLC media player", "VLC"],
+      "legitimate_signer_cns": ["VideoLAN", "VideoLAN non-profit organization"],
+      "official_website": "https://www.videolan.org"
+    },
+    {
+      "id": "7zip",
+      "company_name": "Igor Pavlov",
+      "products": ["7-Zip", "7-Zip GUI", "7-Zip Command Line"],
+      "legitimate_signer_cns": ["Igor Pavlov"],
+      "official_website": "https://www.7-zip.org"
+    },
+    {
+      "id": "microsoft",
+      "company_name": "Microsoft Corporation",
+      "products": ["Microsoft Edge", "Visual Studio Code", "Microsoft Teams", "Microsoft 365", "PowerToys"],
+      "legitimate_signer_cns": ["Microsoft Corporation", "Microsoft Windows", "Microsoft Development Corporation"],
+      "official_website": "https://www.microsoft.com"
+    },
+    {
+      "id": "whatsapp",
+      "company_name": "WhatsApp LLC",
+      "products": ["WhatsApp", "WhatsApp Desktop"],
+      "legitimate_signer_cns": ["WhatsApp LLC", "Meta Platforms, Inc."],
+      "official_website": "https://www.whatsapp.com"
+    },
+    {
+      "id": "mozilla",
+      "company_name": "Mozilla Corporation",
+      "products": ["Mozilla Firefox", "Firefox", "Mozilla Thunderbird"],
+      "legitimate_signer_cns": ["Mozilla Corporation"],
+      "official_website": "https://www.mozilla.org"
+    },
+    {
+      "id": "github",
+      "company_name": "GitHub, Inc.",
+      "products": ["GitHub Desktop", "GitHub CLI"],
+      "legitimate_signer_cns": ["GitHub, Inc."],
+      "official_website": "https://desktop.github.com"
+    },
+    {
+      "id": "obs",
+      "company_name": "OBS Project",
+      "products": ["OBS Studio", "Open Broadcaster Software"],
+      "legitimate_signer_cns": ["Wizards of OBS LLC", "OBS Project"],
+      "official_website": "https://obsproject.com"
+    }
+  ]
+}

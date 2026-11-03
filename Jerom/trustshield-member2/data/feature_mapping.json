@@ -1,0 +1,88 @@
+{
+  "features": [
+    {
+      "name": "overall_shannon_entropy",
+      "type": "float",
+      "source_path": "file_info.overall_shannon_entropy",
+      "default": 5.0,
+      "description": "Shannon entropy evaluated across entire binary (0.0 to 8.0)"
+    },
+    {
+      "name": "file_size_bytes",
+      "type": "int",
+      "source_path": "file_info.size_bytes",
+      "default": 100000,
+      "description": "Total size of the executable file in bytes"
+    },
+    {
+      "name": "section_count",
+      "type": "int",
+      "source_path": "pe_metadata.sections.length",
+      "default": 3,
+      "description": "Total number of PE sections defined in section headers"
+    },
+    {
+      "name": "max_section_entropy",
+      "type": "float",
+      "source_path": "pe_metadata.sections.max(entropy)",
+      "default": 5.5,
+      "description": "Highest Shannon entropy observed among any individual PE section"
+    },
+    {
+      "name": "compile_timestamp_anomaly",
+      "type": "binary",
+      "source_path": "pe_metadata.timestamp_anomaly",
+      "default": 0,
+      "description": "1 if compilation timestamp is in the future or predates year 2000, 0 otherwise"
+    },
+    {
+      "name": "is_signed",
+      "type": "binary",
+      "source_path": "certificate_status.is_signed",
+      "default": 0,
+      "description": "1 if binary contains an embedded Authenticode digital signature, 0 if unsigned"
+    },
+    {
+      "name": "clone_mismatch_detected",
+      "type": "binary",
+      "source_path": "certificate_status.clone_mismatch_detected",
+      "default": 0,
+      "description": "1 if file claims commercial vendor identity (e.g. Google, VLC) without valid signature"
+    },
+    {
+      "name": "wx_permission_risk",
+      "type": "binary",
+      "source_path": "pe_metadata.sections.any(wx_risk)",
+      "default": 0,
+      "description": "1 if any section is simultaneously Writable (0x80000000) and Executable (0x20000000)"
+    },
+    {
+      "name": "is_likely_packed",
+      "type": "binary",
+      "source_path": "file_info.is_likely_packed",
+      "default": 0,
+      "description": "1 if packing heuristics or known packer signatures (UPX, ASPack) are flagged"
+    },
+    {
+      "name": "suspicious_imports_count",
+      "type": "int",
+      "source_path": "pe_metadata.suspicious_imports.length",
+      "default": 0,
+      "description": "Count of imported Windows APIs flagged in threat dictionary"
+    },
+    {
+      "name": "has_process_injection",
+      "type": "binary",
+      "source_path": "pe_metadata.suspicious_imports.contains_injection",
+      "default": 0,
+      "description": "1 if Process Injection APIs (VirtualAllocEx, WriteProcessMemory, CreateRemoteThread) present"
+    },
+    {
+      "name": "has_masquerading",
+      "type": "binary",
+      "source_path": "file_info.extension_masquerading",
+      "default": 0,
+      "description": "1 if filename exhibits double extension (e.g. .pdf.exe) or document masquerading"
+    }
+  ]
+}
