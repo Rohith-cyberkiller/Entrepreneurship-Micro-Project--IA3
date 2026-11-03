@@ -1,0 +1,213 @@
+{
+  "scenario_1_vlc_clean": {
+    "filename": "vlc-3.0.20-win64.exe",
+    "sha256": "4b6a15e6191bcf80ca02eb34ec264ec4f31c26f04d7c588e401eb12be036578a",
+    "member1_static": {
+      "file_info": {
+        "filename": "vlc-3.0.20-win64.exe",
+        "size_bytes": 42180512,
+        "magic_bytes": "4D 5A 90 00",
+        "detected_format": "Windows PE Executable",
+        "extension_masquerading": false,
+        "overall_shannon_entropy": 5.8124,
+        "is_likely_packed": false
+      },
+      "certificate_status": {
+        "is_signed": true,
+        "verification_status": "SIGNED_VERIFIED",
+        "signer_common_name": "VideoLAN non-profit organization",
+        "issuer_ca": "Certum Trusted Network CA",
+        "claimed_product_name": "VLC media player",
+        "claimed_company_name": "VideoLAN",
+        "clone_mismatch_detected": false
+      },
+      "pe_metadata": {
+        "compile_timestamp": "2024-01-15T08:30:00+00:00",
+        "timestamp_anomaly": false,
+        "sections": [
+          {"name": ".text", "entropy": 5.75, "wx_risk": false},
+          {"name": ".rdata", "entropy": 4.52, "wx_risk": false},
+          {"name": ".data", "entropy": 2.10, "wx_risk": false}
+        ],
+        "suspicious_imports": []
+      },
+      "risk_assessment": {
+        "risk_score": 0.0,
+        "verdict": "SAFE",
+        "reasons": ["Clean binary with valid Authenticode signature from VideoLAN"]
+      }
+    },
+    "member2_ml": {
+      "ml_prediction": {
+        "malware_probability_score": 4.2,
+        "classification_verdict": "BENIGN",
+        "confidence_level": "Very High",
+        "model_type": "XGBoost Classifier (v1.2)",
+        "top_contributing_features": [
+          {"feature": "is_signed", "impact": "-35.0%", "description": "Valid Authenticode digital signature verified"},
+          {"feature": "overall_shannon_entropy", "impact": "-25.0%", "description": "Standard binary entropy within natural uncompressed code range"}
+        ]
+      }
+    }
+  },
+  "scenario_2_fake_chrome_trojan": {
+    "filename": "GoogleChrome_Setup.exe",
+    "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+    "member1_static": {
+      "file_info": {
+        "filename": "GoogleChrome_Setup.exe",
+        "size_bytes": 1843200,
+        "magic_bytes": "4D 5A 90 00",
+        "detected_format": "Windows PE Executable",
+        "extension_masquerading": false,
+        "overall_shannon_entropy": 7.6412,
+        "is_likely_packed": true
+      },
+      "certificate_status": {
+        "is_signed": false,
+        "verification_status": "UNSIGNED",
+        "signer_common_name": null,
+        "issuer_ca": null,
+        "claimed_product_name": "Google Chrome",
+        "claimed_company_name": "Google LLC",
+        "clone_mismatch_detected": true
+      },
+      "pe_metadata": {
+        "compile_timestamp": "2024-03-24T10:27:12+00:00",
+        "timestamp_anomaly": false,
+        "sections": [
+          {"name": "UPX0", "virtual_size": 409600, "raw_size": 0, "entropy": 0.0, "wx_risk": true},
+          {"name": "UPX1", "virtual_size": 1433600, "raw_size": 1420800, "entropy": 7.8914, "wx_risk": true}
+        ],
+        "suspicious_imports": ["VirtualAllocEx", "WriteProcessMemory", "CreateRemoteThread"]
+      },
+      "risk_assessment": {
+        "risk_score": 90.0,
+        "verdict": "COUNTERFEIT / HIGH RISK",
+        "reasons": [
+          "File claims to be Google Chrome but lacks a valid Google LLC digital signature (CRITICAL: Counterfeit Clone Alert)",
+          "Section UPX1 has both Writable and Executable (W+X) permissions",
+          "High Shannon entropy (7.8914) in section UPX1 indicates packed/hidden code"
+        ]
+      }
+    },
+    "member2_ml": {
+      "ml_prediction": {
+        "malware_probability_score": 94.8,
+        "classification_verdict": "HIGH RISK MALWARE / COUNTERFEIT",
+        "confidence_level": "Very High",
+        "model_type": "XGBoost Classifier (v1.2)",
+        "top_contributing_features": [
+          {"feature": "clone_mismatch_detected", "impact": "+35.2%", "description": "Claims commercial application identity but lacks valid vendor signature"},
+          {"feature": "max_section_entropy", "impact": "+28.5%", "description": "High section entropy (7.89 > 7.2 threshold) indicates packed/hidden code"},
+          {"feature": "has_process_injection", "impact": "+24.0%", "description": "Imports dangerous Process Injection API Triad"}
+        ]
+      }
+    }
+  },
+  "scenario_3_zero_day_packed": {
+    "filename": "SpecialUpdatePackage_x64.exe",
+    "sha256": "9a38f72c4e1b8590d3421183cf99281a7d65ee1a2c3b4d5e6f7a8b9c0d1e2f3a",
+    "member1_static": {
+      "file_info": {
+        "filename": "SpecialUpdatePackage_x64.exe",
+        "size_bytes": 128400,
+        "magic_bytes": "4D 5A 00 00",
+        "detected_format": "Windows PE Executable",
+        "extension_masquerading": false,
+        "overall_shannon_entropy": 7.8540,
+        "is_likely_packed": true
+      },
+      "certificate_status": {
+        "is_signed": false,
+        "verification_status": "UNSIGNED",
+        "signer_common_name": null,
+        "issuer_ca": null,
+        "claimed_product_name": null,
+        "claimed_company_name": null,
+        "clone_mismatch_detected": false
+      },
+      "pe_metadata": {
+        "compile_timestamp": "2024-03-24T10:27:12+00:00",
+        "timestamp_anomaly": false,
+        "sections": [
+          {"name": ".text", "entropy": 7.82, "wx_risk": true},
+          {"name": ".rsrc", "entropy": 7.10, "wx_risk": false}
+        ],
+        "suspicious_imports": ["VirtualAlloc", "CreateThread"]
+      },
+      "risk_assessment": {
+        "risk_score": 85.0,
+        "verdict": "COUNTERFEIT / HIGH RISK",
+        "reasons": [
+          "Overall file Shannon entropy (7.8540) is exceptionally high (> 7.2000), indicating packed or encrypted content",
+          "Section '.text' has both Writable and Executable (W+X) permissions"
+        ]
+      }
+    },
+    "member2_ml": {
+      "ml_prediction": {
+        "malware_probability_score": 91.0,
+        "classification_verdict": "HIGH RISK MALWARE / COUNTERFEIT",
+        "confidence_level": "Very High",
+        "model_type": "XGBoost Classifier (v1.2)",
+        "top_contributing_features": [
+          {"feature": "max_section_entropy", "impact": "+28.5%", "description": "High section entropy (7.82 > 7.2 threshold)"},
+          {"feature": "wx_permission_risk", "impact": "+18.0%", "description": "Executable section with write permissions"}
+        ]
+      }
+    }
+  },
+  "scenario_4_grayware_adware": {
+    "filename": "FreeUtilityInstaller.exe",
+    "sha256": "81c3b87910a30b5993de2a450e18141870a311497a9f93c0bc135f606e10034a",
+    "member1_static": {
+      "file_info": {
+        "filename": "FreeUtilityInstaller.exe",
+        "size_bytes": 1048576,
+        "magic_bytes": "4D 5A 90 00",
+        "detected_format": "Windows PE Executable",
+        "extension_masquerading": false,
+        "overall_shannon_entropy": 6.7210,
+        "is_likely_packed": false
+      },
+      "certificate_status": {
+        "is_signed": true,
+        "verification_status": "UNTRUSTED_ROOT",
+        "signer_common_name": "FreeTools Media Ltd",
+        "issuer_ca": "Unknown CA",
+        "claimed_product_name": "Media Booster",
+        "claimed_company_name": "FreeTools Media Ltd",
+        "clone_mismatch_detected": false
+      },
+      "pe_metadata": {
+        "compile_timestamp": "2023-08-11T14:10:00+00:00",
+        "timestamp_anomaly": false,
+        "sections": [
+          {"name": ".text", "entropy": 6.50, "wx_risk": false},
+          {"name": ".rsrc", "entropy": 5.20, "wx_risk": false}
+        ],
+        "suspicious_imports": ["URLDownloadToFileW", "WinExec"]
+      },
+      "risk_assessment": {
+        "risk_score": 45.0,
+        "verdict": "SUSPICIOUS",
+        "reasons": [
+          "Certificate issued by untrusted authority",
+          "Imports downloader APIs (URLDownloadToFileW)"
+        ]
+      }
+    },
+    "member2_ml": {
+      "ml_prediction": {
+        "malware_probability_score": 52.0,
+        "classification_verdict": "SUSPICIOUS",
+        "confidence_level": "Moderate",
+        "model_type": "XGBoost Classifier (v1.2)",
+        "top_contributing_features": [
+          {"feature": "suspicious_imports_count", "impact": "+12.0%", "description": "Contains 2 suspicious Windows APIs flagged in threat dictionary"}
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "scenarios": {
+    "scenario_1_vlc_clean": {
+      "sha256": "4b6a15e6191bcf80ca02eb34ec264ec4f31c26f04d7c588e401eb12be036578a",
+      "name": "Official VLC Media Player Installer",
+      "virustotal": {
+        "found": true,
+        "malicious_count": 0,
+        "suspicious_count": 0,
+        "harmless_count": 68,
+        "undetected": 4,
+        "total_engines": 72,
+        "detection_ratio_pct": 0.0,
+        "threat_label": null,
+        "reputation": 142,
+        "times_submitted": 2840
+      },
+      "malwarebazaar": {
+        "found": false,
+        "signature_family": null,
+        "file_type": "exe",
+        "tags": [],
+        "yara_rules": []
+      }
+    },
+    "scenario_2_fake_chrome_trojan": {
+      "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+      "name": "Counterfeit Google Chrome Trojan (RedLineStealer)",
+      "virustotal": {
+        "found": true,
+        "malicious_count": 48,
+        "suspicious_count": 3,
+        "harmless_count": 0,
+        "undetected": 21,
+        "total_engines": 72,
+        "detection_ratio_pct": 66.67,
+        "threat_label": "trojan.stealer/redline",
+        "reputation": -84,
+        "times_submitted": 14
+      },
+      "malwarebazaar": {
+        "found": true,
+        "signature_family": "RedLineStealer",
+        "file_type": "exe",
+        "tags": ["exe", "upx", "stealer", "trojan"],
+        "yara_rules": ["win_redline_stealer_auto", "packed_upx_executable"]
+      }
+    },
+    "scenario_3_zero_day_packed": {
+      "sha256": "9a38f72c4e1b8590d3421183cf99281a7d65ee1a2c3b4d5e6f7a8b9c0d1e2f3a",
+      "name": "Brand-New Zero-Day Packed Installer (Unseen by Cloud Feeds)",
+      "virustotal": {
+        "found": false,
+        "status_code": 404,
+        "message": "Resource not found (Zero-Day or Unsubmitted Binary)",
+        "malicious_count": 0,
+        "suspicious_count": 0,
+        "harmless_count": 0,
+        "total_engines": 0,
+        "detection_ratio_pct": 0.0,
+        "threat_label": null,
+        "reputation": 0,
+        "times_submitted": 0
+      },
+      "malwarebazaar": {
+        "found": false,
+        "query_status": "hash_not_found",
+        "signature_family": null,
+        "file_type": null,
+        "tags": [],
+        "yara_rules": []
+      }
+    },
+    "scenario_4_grayware_adware": {
+      "sha256": "81c3b87910a30b5993de2a450e18141870a311497a9f93c0bc135f606e10034a",
+      "name": "Minor Grayware / Adware Bundler",
+      "virustotal": {
+        "found": true,
+        "malicious_count": 3,
+        "suspicious_count": 2,
+        "harmless_count": 12,
+        "undetected": 55,
+        "total_engines": 72,
+        "detection_ratio_pct": 4.17,
+        "threat_label": "adware.bundler/installcore",
+        "reputation": -12,
+        "times_submitted": 6
+      },
+      "malwarebazaar": {
+        "found": false,
+        "signature_family": null,
+        "file_type": "exe",
+        "tags": ["adware", "bundler"],
+        "yara_rules": []
+      }
+    }
+  }
+}
