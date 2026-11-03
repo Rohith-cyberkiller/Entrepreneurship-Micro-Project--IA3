@@ -1,0 +1,130 @@
+{
+  "publishers": [
+    {
+      "id": "google",
+      "company_name": "Google LLC",
+      "products": ["Google Chrome", "Chrome", "Google Drive", "Google Earth"],
+      "legitimate_signer_cns": ["Google LLC", "Google Inc", "Google Inc."],
+      "official_website": "https://www.google.com"
+    },
+    {
+      "id": "videolan",
+      "company_name": "VideoLAN",
+      "products": ["VLC media player", "VLC"],
+      "legitimate_signer_cns": ["VideoLAN", "VideoLAN non-profit organization"],
+      "official_website": "https://www.videolan.org"
+    },
+    {
+      "id": "7zip",
+      "company_name": "Igor Pavlov",
+      "products": ["7-Zip", "7-Zip GUI", "7-Zip Command Line"],
+      "legitimate_signer_cns": ["Igor Pavlov"],
+      "official_website": "https://www.7-zip.org"
+    },
+    {
+      "id": "microsoft",
+      "company_name": "Microsoft Corporation",
+      "products": ["Microsoft Edge", "Visual Studio Code", "Microsoft Teams", "Microsoft 365", "Skype", "PowerToys"],
+      "legitimate_signer_cns": ["Microsoft Corporation", "Microsoft Windows", "Microsoft Development Corporation"],
+      "official_website": "https://www.microsoft.com"
+    },
+    {
+      "id": "whatsapp",
+      "company_name": "WhatsApp LLC",
+      "products": ["WhatsApp", "WhatsApp Desktop"],
+      "legitimate_signer_cns": ["WhatsApp LLC", "Meta Platforms, Inc."],
+      "official_website": "https://www.whatsapp.com"
+    },
+    {
+      "id": "mozilla",
+      "company_name": "Mozilla Corporation",
+      "products": ["Mozilla Firefox", "Firefox", "Mozilla Thunderbird", "Thunderbird"],
+      "legitimate_signer_cns": ["Mozilla Corporation"],
+      "official_website": "https://www.mozilla.org"
+    },
+    {
+      "id": "github",
+      "company_name": "GitHub, Inc.",
+      "products": ["GitHub Desktop", "GitHub CLI"],
+      "legitimate_signer_cns": ["GitHub, Inc."],
+      "official_website": "https://desktop.github.com"
+    },
+    {
+      "id": "valve",
+      "company_name": "Valve Corporation",
+      "products": ["Steam", "Steam Client"],
+      "legitimate_signer_cns": ["Valve", "Valve Corp.", "Valve Corporation"],
+      "official_website": "https://store.steampowered.com"
+    },
+    {
+      "id": "spotify",
+      "company_name": "Spotify AB",
+      "products": ["Spotify", "Spotify Music"],
+      "legitimate_signer_cns": ["Spotify AB"],
+      "official_website": "https://www.spotify.com"
+    },
+    {
+      "id": "discord",
+      "company_name": "Discord Inc.",
+      "products": ["Discord", "Discord Canary"],
+      "legitimate_signer_cns": ["Discord Inc."],
+      "official_website": "https://discord.com"
+    },
+    {
+      "id": "adobe",
+      "company_name": "Adobe Inc.",
+      "products": ["Adobe Acrobat Reader", "Adobe Photoshop", "Creative Cloud"],
+      "legitimate_signer_cns": ["Adobe Inc.", "Adobe Systems Incorporated"],
+      "official_website": "https://www.adobe.com"
+    },
+    {
+      "id": "telegram",
+      "company_name": "Telegram FZ-LLC",
+      "products": ["Telegram Desktop", "Telegram"],
+      "legitimate_signer_cns": ["Telegram FZ-LLC"],
+      "official_website": "https://desktop.telegram.org"
+    },
+    {
+      "id": "obs",
+      "company_name": "OBS Project",
+      "products": ["OBS Studio", "Open Broadcaster Software"],
+      "legitimate_signer_cns": ["Wizards of OBS LLC", "OBS Project"],
+      "official_website": "https://obsproject.com"
+    },
+    {
+      "id": "apple",
+      "company_name": "Apple Inc.",
+      "products": ["iTunes", "iCloud", "Apple Music"],
+      "legitimate_signer_cns": ["Apple Inc.", "Apple Computer, Inc."],
+      "official_website": "https://www.apple.com"
+    },
+    {
+      "id": "oracle",
+      "company_name": "Oracle Corporation",
+      "products": ["VirtualBox", "Oracle VM VirtualBox", "Java", "JDK"],
+      "legitimate_signer_cns": ["Oracle Corporation", "Oracle America, Inc."],
+      "official_website": "https://www.oracle.com"
+    },
+    {
+      "id": "wireshark",
+      "company_name": "Wireshark Foundation",
+      "products": ["Wireshark", "TShark"],
+      "legitimate_signer_cns": ["Wireshark Foundation", "Gerald Combs"],
+      "official_website": "https://www.wireshark.org"
+    },
+    {
+      "id": "notepadplusplus",
+      "company_name": "Don HO",
+      "products": ["Notepad++", "Notepad++ GUI"],
+      "legitimate_signer_cns": ["Don HO", "Notepad++"],
+      "official_website": "https://notepad-plus-plus.org"
+    },
+    {
+      "id": "brave",
+      "company_name": "Brave Software, Inc.",
+      "products": ["Brave Browser", "Brave"],
+      "legitimate_signer_cns": ["Brave Software, Inc."],
+      "official_website": "https://brave.com"
+    }
+  ]
+}

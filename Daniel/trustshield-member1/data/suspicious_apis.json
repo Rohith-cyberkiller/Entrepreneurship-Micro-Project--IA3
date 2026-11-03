@@ -1,0 +1,82 @@
+{
+  "Process Injection": {
+    "severity": "CRITICAL",
+    "threat_score": 30,
+    "mitre_technique": "T1055 - Process Injection",
+    "apis": [
+      "VirtualAllocEx",
+      "WriteProcessMemory",
+      "CreateRemoteThread",
+      "QueueUserAPC",
+      "SetThreadContext",
+      "NtMapViewOfSection",
+      "ZwMapViewOfSection",
+      "RtlCreateUserThread",
+      "OpenProcess"
+    ],
+    "description": "APIs frequently chained together to allocate memory, write shellcode, and execute unbacked threads in remote processes."
+  },
+  "Keylogging & Input Capture": {
+    "severity": "HIGH",
+    "threat_score": 25,
+    "mitre_technique": "T1056.001 - Input Capture: Keylogging",
+    "apis": [
+      "SetWindowsHookExA",
+      "SetWindowsHookExW",
+      "GetAsyncKeyState",
+      "GetKeyState",
+      "GetKeyboardState",
+      "RegisterRawInputDevices"
+    ],
+    "description": "APIs used to hook low-level keyboard input or poll user keystrokes for credential harvesting."
+  },
+  "Payload Download & Execution": {
+    "severity": "HIGH",
+    "threat_score": 25,
+    "mitre_technique": "T1105 - Ingress Tool Transfer / T1059 - Command and Scripting Interpreter",
+    "apis": [
+      "URLDownloadToFileA",
+      "URLDownloadToFileW",
+      "InternetOpenA",
+      "InternetOpenW",
+      "InternetOpenUrlA",
+      "InternetOpenUrlW",
+      "WinExec",
+      "ShellExecuteA",
+      "ShellExecuteW",
+      "CreateProcessA",
+      "CreateProcessW"
+    ],
+    "description": "APIs capable of silently downloading secondary stage payloads from remote C2 servers and executing them."
+  },
+  "Anti-Debugging & Evasion": {
+    "severity": "MEDIUM",
+    "threat_score": 15,
+    "mitre_technique": "T1497 - Virtualization/Sandbox Evasion",
+    "apis": [
+      "IsDebuggerPresent",
+      "CheckRemoteDebuggerPresent",
+      "NtQueryInformationProcess",
+      "OutputDebugStringA",
+      "OutputDebugStringW",
+      "GetTickCount",
+      "QueryPerformanceCounter"
+    ],
+    "description": "Techniques used by malware to detect execution inside sandboxes, analysis environments, or debuggers."
+  },
+  "Persistence & Registry Tampering": {
+    "severity": "MEDIUM",
+    "threat_score": 15,
+    "mitre_technique": "T1547 - Boot or Logon Autostart Execution",
+    "apis": [
+      "RegSetValueExA",
+      "RegSetValueExW",
+      "RegCreateKeyExA",
+      "RegCreateKeyExW",
+      "CreateServiceA",
+      "CreateServiceW",
+      "StartServiceA"
+    ],
+    "description": "APIs used to establish persistence via Run registry keys or Windows Service registration."
+  }
+}

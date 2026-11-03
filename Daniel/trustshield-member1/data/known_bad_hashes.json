@@ -1,0 +1,35 @@
+{
+  "known_malicious_hashes": {
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855_comment": "Zero-byte sample is not malicious, listed below are known threat samples",
+    "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f": {
+      "family": "Trojan.Win32.ChromeClone.A",
+      "threat_type": "Counterfeit Browser Dropper",
+      "severity": "CRITICAL",
+      "detection_name": "Win32/FakeChrome.Gen!MTB"
+    },
+    "d04b69b0248675a848c90f07bf600e9394827837b0991cad686eb5aa9504f5b8": {
+      "family": "Trojan.Win32.WannaCry.Loader",
+      "threat_type": "Ransomware Dropper",
+      "severity": "CRITICAL",
+      "detection_name": "Ransom.WannaCrypt"
+    },
+    "7b01b2a1a89f9e5c4672691fa30d507b9a7fb3c9b7e754df93b827e651bf65a1": {
+      "family": "Backdoor.Win32.Emotet.Generic",
+      "threat_type": "Banking Trojan / Botnet",
+      "severity": "CRITICAL",
+      "detection_name": "Trojan.Emotet"
+    },
+    "51144a110c0bf9a475b4f2a7ec976b9da9dd3cf9f2d1e2cf1ac8726a1630f309": {
+      "family": "Trojan.Win32.AgentTesla.Keylogger",
+      "threat_type": "Spyware / Keylogger",
+      "severity": "HIGH",
+      "detection_name": "Spyware.AgentTesla"
+    },
+    "9f83c605d4c82c23ff0e1ec9b762b5f5ced19a4b60ecd4570308497302377fa8": {
+      "family": "Trojan.Win32.RedLineStealer",
+      "threat_type": "InfoStealer",
+      "severity": "CRITICAL",
+      "detection_name": "Infostealer.RedLine"
+    }
+  }
+}
